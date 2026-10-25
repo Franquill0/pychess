@@ -1,9 +1,9 @@
 import subprocess
 import sys
 
-resultado = subprocess.run(
+result = subprocess.run(
     [sys.executable, "-m", "mypy", "."],
     check=False,
 )
 
-sys.exit(resultado.returncode)
+sys.exit(result.returncode)
