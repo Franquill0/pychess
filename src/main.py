@@ -1,6 +1,6 @@
 from board import Board
 
-def main():
+def main() -> None:
     board = Board()
     board.initial_position()
     print(board)

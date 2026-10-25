@@ -3,12 +3,12 @@ from position import Position
 
 
 class Board:
-    def __init__(self):
+    def __init__(self) -> None:
         # let's asssume the coords 0,0 in self.board correspond to
         # A8 in the chess board
         self.board:list[list[None | Piece]] = [ [None for _ in range(8)] for _ in range(8) ]
 
-    def initial_position(self):
+    def initial_position(self) -> None:
         # Pawns
         for i in range(8):
             self._put_piece_on(Pawn(PieceColor.BLACK), 1, i)
@@ -35,7 +35,7 @@ class Board:
         self._put_piece_on(King(PieceColor.BLACK), 0, 4)
         self._put_piece_on(King(PieceColor.WHITE), 7, 4)
 
-    def _put_piece_on(self, piece:Piece, pos_y:int, pos_x:int):
+    def _put_piece_on(self, piece:Piece, pos_y:int, pos_x:int) -> None:
         assert Position.is_valid_position(pos_y, pos_x), f"({pos_y},{pos_x}) not a valid position"
         self.board[pos_y][pos_x] = piece
 
