@@ -2,7 +2,8 @@ from board import Board
 
 def main():
     board = Board()
-    print("Bien!")
+    board.initial_position()
+    print(board)
 
 
 if __name__ == "__main__":
