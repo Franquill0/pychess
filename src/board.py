@@ -50,6 +50,16 @@ class Board:
                     board_str += " "
             board_str += "\n"
         return board_str
+
+    def get_piece_on(self, position:Position) -> None | Piece:
+        return self.board[position.get_row()][position.get_col()]
+
+    def _can_move_from_to(self, initial_pos:Position, final_pos:Position) -> bool:
+        piece = self.get_piece_on(initial_pos)
+        if piece == None:
+            return False
+        else:
+            return piece.can_move_from_to(self, initial_pos, final_pos)
                     
 
 
